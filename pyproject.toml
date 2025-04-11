@@ -1,0 +1,16 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "nldkit"
+version = "0.1.0"
+description = "A Python toolkit for analyzing nonlinear dynamical systems with oscillatory behavior"
+authors = [{name="Yernur Baibolatov", email="yernurb@gmail.com"}]
+dependencies = ["numpy", "matplotlib"]
+requires-python = ">=3.8"
+readme = "README.md"
+license = {text = "MIT"}
+
+[project.urls]
+Homepage = "https://github.com/YOUR_USERNAME/NLDKit"
