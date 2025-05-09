@@ -1,5 +1,5 @@
 #include "Integrator.hpp"
-#include "UserDefinedSystem.hpp"
+#include "DynamicalSystem.hpp"
 #include <Eigen/Dense>
 #include <iostream>
 
