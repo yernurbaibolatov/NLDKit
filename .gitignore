@@ -1,0 +1,20 @@
+# Ignore build artifacts
+cpp/build/
+cpp/CMakeFiles/
+cpp/CMakeCache.txt
+cpp/Makefile
+cpp/simulation
+
+# Ignore editor files
+.vscode/
+*.swp
+
+# OS-specific
+.DS_Store
+
+# Compiled object files
+*.o
+*.obj
+
+# Backup files
+*~
