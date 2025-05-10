@@ -22,37 +22,3 @@ public:
         throw std::runtime_error("getParameter() not implemented for this system.");
     }
 };
-
-// Specialization for 2D systems
-class AbstractDynamicalSystem2D {
-public:
-    virtual ~AbstractDynamicalSystem2D() = default;
-
-    static constexpr int dim = 2;  // Fixed dimension for 2D systems
-    virtual void rhs(double t, const Vec2& y, Vec2& dydt) = 0;
-
-    virtual void setParameter(const std::string& name, double value) {
-        throw std::runtime_error("setParameter() not implemented for this 2D system.");
-    }
-
-    virtual double getParameter(const std::string& name) const {
-        throw std::runtime_error("getParameter() not implemented for this 2D system.");
-    }
-};
-
-// Specialization for 3D systems
-class AbstractDynamicalSystem3D {
-public:
-    virtual ~AbstractDynamicalSystem3D() = default;
-
-    static constexpr int dim = 3;  // Fixed dimension for 3D systems
-    virtual void rhs(double t, const Vec3& y, Vec3& dydt) = 0;
-
-    virtual void setParameter(const std::string& name, double value) {
-        throw std::runtime_error("setParameter() not implemented for this 3D system.");
-    }
-
-    virtual double getParameter(const std::string& name) const {
-        throw std::runtime_error("getParameter() not implemented for this 3D system.");
-    }
-};

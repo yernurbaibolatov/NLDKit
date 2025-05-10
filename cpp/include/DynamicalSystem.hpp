@@ -5,18 +5,16 @@
 #include <string>
 #include <stdexcept>
 
-class ParameterManager {
-protected:
-    std::map<std::string, double> parameters_;
-
+class DynamicalSystem : public AbstractDynamicalSystem {
 public:
-    virtual ~ParameterManager() = default;
+    DynamicalSystem() = default;
+    ~DynamicalSystem() override = default;
 
-    void setParameter(const std::string& name, double value) {
+    void setParameter(const std::string& name, double value) override {
         parameters_[name] = value;
     }
 
-    double getParameter(const std::string& name) const {
+    double getParameter(const std::string& name) const override {
         auto it = parameters_.find(name);
         if (it != parameters_.end()) {
             return it->second;
@@ -24,30 +22,20 @@ public:
             throw std::invalid_argument("Unknown parameter: " + name);
         }
     }
-};
 
-class DynamicalSystem : public AbstractDynamicalSystem, public ParameterManager {
-public:
-    DynamicalSystem() = default;
-    ~DynamicalSystem() override = default;
-
+    /**
+     * @brief Computes the right-hand side of the dynamical system.
+     * 
+     * IMPORTANT: The sizes of the input vectors y and dydt must exactly match the system's dimension (dim).
+     * It is the responsibility of the concrete system implementation to ensure that y.size() == dim 
+     * and dydt.size() == dim. Any mismatch may result in undefined behavior or runtime errors.
+     *
+     * @param t Current time
+     * @param y State vector (input), must have size equal to dim
+     * @param dydt Derivative vector (output), must have size equal to dim
+     */
     void rhs(double t, const Vec& y, Vec& dydt) override = 0;
-};
 
-// Dynamical system class for 2D systems
-class DynamicalSystem2D : public AbstractDynamicalSystem2D, public ParameterManager {
-public:
-    DynamicalSystem2D() = default;
-    ~DynamicalSystem2D() override = default;
-
-    void rhs(double t, const Vec2& y, Vec2& dydt) override = 0;
-};
-
-// Dynamical system class for 3D systems
-class DynamicalSystem3D : public AbstractDynamicalSystem3D, public ParameterManager {
-public:
-    DynamicalSystem3D() = default;
-    ~DynamicalSystem3D() override = default;
-
-    void rhs(double t, const Vec3& y, Vec3& dydt) override = 0;
+protected:
+    std::map<std::string, double> parameters_;
 };

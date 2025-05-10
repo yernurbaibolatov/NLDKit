@@ -2,19 +2,22 @@
 
 #include "DynamicalSystem.hpp"
 
+// Class representing a damped harmonic oscillator system
 class DampedOscillator : public DynamicalSystem {
-    double omega_;
-    double gamma_;
+    double omega_;  // Natural frequency
+    double gamma_;  // Damping coefficient
 
 public:
-    // Constructor initializes parameters
+    // Constructor initializes system dimension and parameters
     DampedOscillator(double omega, double gamma) {
+        dim = 2;
         setParameter("omega", omega);
         setParameter("gamma", gamma);
     }
 
-    // Right-hand side of the damped oscillator ODE
+    // Compute the right-hand side of the ODE
     void rhs(double t, const Vec& y, Vec& dydt) override {
+        dydt.resize(2);
         dydt[0] = y[1];
         dydt[1] = -2.0 * gamma_ * y[1] - omega_ * omega_ * y[0];
     }
