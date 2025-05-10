@@ -1,0 +1,38 @@
+[
+{
+  "directory": "/Users/yernurbaibolatov/Documents/Projects/NLDKit/build",
+  "command": "/usr/bin/clang++  -I/Users/yernurbaibolatov/Documents/Projects/NLDKit/cpp/include -isystem /opt/homebrew/include/eigen3 -g -std=gnu++17 -arch arm64 -o CMakeFiles/simulation.dir/src/main.cpp.o -c /Users/yernurbaibolatov/Documents/Projects/NLDKit/cpp/src/main.cpp",
+  "file": "/Users/yernurbaibolatov/Documents/Projects/NLDKit/cpp/src/main.cpp",
+  "output": "CMakeFiles/simulation.dir/src/main.cpp.o"
+},
+{
+  "directory": "/Users/yernurbaibolatov/Documents/Projects/NLDKit/build",
+  "command": "/usr/bin/clang++  -I/Users/yernurbaibolatov/Documents/Projects/NLDKit/cpp/include -isystem /opt/homebrew/include/eigen3 -g -std=gnu++17 -arch arm64 -o CMakeFiles/simulation.dir/src/core/DynamicalSystem.cpp.o -c /Users/yernurbaibolatov/Documents/Projects/NLDKit/cpp/src/core/DynamicalSystem.cpp",
+  "file": "/Users/yernurbaibolatov/Documents/Projects/NLDKit/cpp/src/core/DynamicalSystem.cpp",
+  "output": "CMakeFiles/simulation.dir/src/core/DynamicalSystem.cpp.o"
+},
+{
+  "directory": "/Users/yernurbaibolatov/Documents/Projects/NLDKit/build",
+  "command": "/usr/bin/clang++  -I/Users/yernurbaibolatov/Documents/Projects/NLDKit/cpp/include -isystem /opt/homebrew/include/eigen3 -g -std=gnu++17 -arch arm64 -o CMakeFiles/simulation.dir/src/core/Integrator.cpp.o -c /Users/yernurbaibolatov/Documents/Projects/NLDKit/cpp/src/core/Integrator.cpp",
+  "file": "/Users/yernurbaibolatov/Documents/Projects/NLDKit/cpp/src/core/Integrator.cpp",
+  "output": "CMakeFiles/simulation.dir/src/core/Integrator.cpp.o"
+},
+{
+  "directory": "/Users/yernurbaibolatov/Documents/Projects/NLDKit/build",
+  "command": "/usr/bin/clang++  -I/Users/yernurbaibolatov/Documents/Projects/NLDKit/cpp/include -isystem /opt/homebrew/include/eigen3 -g -std=gnu++17 -arch arm64 -o CMakeFiles/test_damped_oscillator.dir/tests/test_damped_oscillator.cpp.o -c /Users/yernurbaibolatov/Documents/Projects/NLDKit/cpp/tests/test_damped_oscillator.cpp",
+  "file": "/Users/yernurbaibolatov/Documents/Projects/NLDKit/cpp/tests/test_damped_oscillator.cpp",
+  "output": "CMakeFiles/test_damped_oscillator.dir/tests/test_damped_oscillator.cpp.o"
+},
+{
+  "directory": "/Users/yernurbaibolatov/Documents/Projects/NLDKit/build",
+  "command": "/usr/bin/clang++  -I/Users/yernurbaibolatov/Documents/Projects/NLDKit/cpp/include -isystem /opt/homebrew/include/eigen3 -g -std=gnu++17 -arch arm64 -o CMakeFiles/test_damped_oscillator.dir/src/core/Integrator.cpp.o -c /Users/yernurbaibolatov/Documents/Projects/NLDKit/cpp/src/core/Integrator.cpp",
+  "file": "/Users/yernurbaibolatov/Documents/Projects/NLDKit/cpp/src/core/Integrator.cpp",
+  "output": "CMakeFiles/test_damped_oscillator.dir/src/core/Integrator.cpp.o"
+},
+{
+  "directory": "/Users/yernurbaibolatov/Documents/Projects/NLDKit/build",
+  "command": "/usr/bin/clang++  -I/Users/yernurbaibolatov/Documents/Projects/NLDKit/cpp/include -isystem /opt/homebrew/include/eigen3 -g -std=gnu++17 -arch arm64 -o CMakeFiles/test_damped_oscillator.dir/src/core/DynamicalSystem.cpp.o -c /Users/yernurbaibolatov/Documents/Projects/NLDKit/cpp/src/core/DynamicalSystem.cpp",
+  "file": "/Users/yernurbaibolatov/Documents/Projects/NLDKit/cpp/src/core/DynamicalSystem.cpp",
+  "output": "CMakeFiles/test_damped_oscillator.dir/src/core/DynamicalSystem.cpp.o"
+}
+]

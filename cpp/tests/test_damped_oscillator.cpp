@@ -13,13 +13,13 @@ int main() {
 
     // Set initial conditions: position = 1.0, velocity = 0.0
     Vec y(2);
-    y(0) = 1.0;  // x
-    y(1) = 0.0;  // v
+    y(0) = 0.2;  // x
+    y(1) = -2.0;  // v
 
     // Set up the integrator
-    double dt = 0.01;
+    double dt = 0.001;
     double t0 = 0.0;
-    double tf = 10.0;
+    double tf = 50.0;
 
     Integrator integrator(oscillator, dt);
     integrator.setTransientTime(0.0);
@@ -32,10 +32,8 @@ int main() {
     const Mat& results = integrator.getResults();
     const Vec& times = integrator.getTimes();
 
-    std::cout << "Time\tPosition\tVelocity" << std::endl;
-    for (int i = 0; i < times.size(); ++i) {
-        std::cout << times(i) << "\t" << results(0, i) << "\t" << results(1, i) << std::endl;
-    }
+    std::cout << "Finished integrating" << std::endl;
+    integrator.writeResultsToCSV("../../data/damped_oscillator.csv");
 
     return 0;
 }

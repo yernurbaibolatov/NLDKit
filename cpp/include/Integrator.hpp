@@ -11,6 +11,7 @@ public:
     Integrator(AbstractDynamicalSystem& system, double dt);  // Constructor with system reference and time step
     void integrate(Vec& y, double t0, double tf);            // Runs integration from t0 to tf
 
+    void writeResultsToCSV(const std::string& filename) const;  // Writes the integration results into a CSV file
     void setTransientTime(double t_transient);               // Sets transient phase duration (no recording)
     void setOutputInterval(double interval);                 // Sets output sampling interval
     const Mat& getResults() const;                           // Returns matrix of saved results (dim × num_samples)

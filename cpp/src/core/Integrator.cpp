@@ -1,3 +1,5 @@
+#include <fstream>
+#include <iomanip>
 #include "Integrator.hpp"
 #include "Definitions.hpp"
 #include <iostream>
@@ -99,5 +101,38 @@ void Integrator::integrate(Vec& y, double t0, double tf) {
         sample_idx++;
         if (max_steps <= 0) break;
     }
+    // Trim unused columns if we didn't fill all allocated slots
+    if (sample_idx < num_samples) {
+        results_.conservativeResize(Eigen::NoChange, sample_idx);
+        times_.conservativeResize(sample_idx);
+    }
     // std::cout << "Integration complete. Final state:\n" << y.transpose() << std::endl;
+}
+
+void Integrator::writeResultsToCSV(const std::string& filename) const {
+    std::ofstream file(filename);
+    if (!file.is_open()) {
+        throw std::runtime_error("Failed to open file: " + filename);
+    }
+
+    // Set scientific format with high precision
+    file << std::scientific << std::setprecision(15);
+
+    // Write header
+    file << "time";
+    for (int i = 0; i < results_.rows(); ++i) {
+        file << ",state_" << i;
+    }
+    file << "\n";
+
+    // Write data
+    for (int col = 0; col < results_.cols(); ++col) {
+        file << times_(col);
+        for (int row = 0; row < results_.rows(); ++row) {
+            file << "," << results_(row, col);
+        }
+        file << "\n";
+    }
+
+    file.close();
 }
